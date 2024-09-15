@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,46 +12,48 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container text-center">
+        <header class="main-header">
             <h1>Sound Controlled Aliens</h1>
-            <p>Make sounds to control alien reactions! Clap, snap, drum roll, and more.</p>
-            <button class="start-btn" onclick="startClassification()">Start</button>
-        </div>
-    </header>
+            <p>Make sounds to control the aliens! Clap, snap, drum roll, and more.</p>
+            <button class="start-btn" onclick="startClassification()">Start Listening</button>
+        </header>
 
-    <section class="sound-status">
-        <h3 id="result_label">I can hear - </h3>
-        <h4 id="result_confidence">Accuracy - </h4>
-        <canvas id="sound-visualizer"></canvas>
-    </section>
+        <section class="sound-status">
+            <h3 id="result_label">I can hear - </h3>
+            <h4 id="result_confidence">Accuracy - </h4>
+            <canvas id="sound-visualizer"></canvas>
+        </section>
 
-    <section class="aliens-section">
-        <div class="alien-card">
-            <img src="aliens-01.png" id="alien1" alt="Alien 1">
-            <p>Alien 1: Reacts to claps</p>
-        </div>
-        <div class="alien-card">
-            <img src="aliens-02.png" id="alien2" alt="Alien 2">
-            <p>Alien 2: Reacts to drum rolls</p>
-        </div>
-        <div class="alien-card">
-            <img src="aliens-03.png" id="alien3" alt="Alien 3">
-            <p>Alien 3: Reacts to snaps</p>
-        </div>
-        <div class="alien-card">
-            <img src="aliens-04.png" id="alien4" alt="Alien 4">
-            <p>Alien 4: Reacts to other sounds</p>
-        </div>
-    </section>
+        <section class="aliens-section text-center">
+            <div class="alien-container">
+                <div class="alien-card">
+                    <img src="aliens-01.png" id="alien1" alt="Alien 1">
+                    <p>Alien 1: Reacts to claps</p>
+                </div>
+                <div class="alien-card">
+                    <img src="aliens-02.png" id="alien2" alt="Alien 2">
+                    <p>Alien 2: Reacts to drum rolls</p>
+                </div>
+                <div class="alien-card">
+                    <img src="aliens-03.png" id="alien3" alt="Alien 3">
+                    <p>Alien 3: Reacts to snaps</p>
+                </div>
+                <div class="alien-card">
+                    <img src="aliens-04.png" id="alien4" alt="Alien 4">
+                    <p>Alien 4: Reacts to other sounds</p>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>Developed by Vikhyath M.</p>
-        <div class="social-icons">
-            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
-    </footer>
+        <footer class="footer">
+            <p>Developed by Vikhyath M.</p>
+            <div class="social-icons">
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </footer>
+    </div>
 
     <script src="main.js"></script>
 </body>
