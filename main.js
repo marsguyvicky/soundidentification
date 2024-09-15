@@ -1,3 +1,4 @@
+// Initialize sound classifier and sound visualizer
 function startClassification() {
     navigator.mediaDevices.getUserMedia({ audio: true });
     classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/d9BC74WyA/model.json', modelReady);
@@ -5,8 +6,10 @@ function startClassification() {
 
 function modelReady() {
     classifier.classify(gotResults);
+    initializeSoundVisualizer();
 }
 
+// Handle sound classification results
 function gotResults(error, results) {
     if (error) {
         console.error(error);
@@ -15,14 +18,14 @@ function gotResults(error, results) {
 
     let label = results[0].label;
     let confidence = (results[0].confidence * 100).toFixed(2);
-    
+
     document.getElementById("result_label").innerHTML = 'I can hear: ' + label;
     document.getElementById("result_confidence").innerHTML = 'Accuracy: ' + confidence + "%";
-    
+
     changeAlienImage(label);
-    visualizeSound();
 }
 
+// Dynamically change alien images based on sound label
 function changeAlienImage(label) {
     let img1 = document.getElementById('alien1');
     let img2 = document.getElementById('alien2');
@@ -52,6 +55,21 @@ function changeAlienImage(label) {
     }
 }
 
-function visualizeSound() {
-    // Add sound visualizer logic here (optional)
+// Initialize a basic sound visualizer
+function initializeSoundVisualizer() {
+    const canvas = document.getElementById('sound-visualizer');
+    const ctx = canvas.getContext('2d');
+
+    function drawVisualizer() {
+        const width = canvas.width;
+        const height = canvas.height;
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.fillStyle = '#00bcd4';
+        ctx.fillRect(0, height / 2 - 10, width, 20);
+
+        requestAnimationFrame(drawVisualizer);
+    }
+
+    drawVisualizer();
 }
