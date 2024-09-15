@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound Controlled Aliens</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -13,26 +12,32 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="col-xs-12 header_div text-center">
-<h2> Sound Controlled Aliens</h2>
-<pd>Note: Make different sounds by clapping, snapping, drum rolling, and more</pd>
-</div>
-<div>
-    <center>
-<br>
-<button class="btn btn-warning" onclick="startClassification();"> Start </button>
-<h3 id="result_label">I can hear - </h3>
-<h4 id="result_confidence">Accuracy - </h4>
-<br>
-<img src="aliens-01.png" id="alien1" width="300" height="300" >
-<img src="aliens-02.png" id="alien2" width="300" height="300" > 
-<img src="aliens-03.png" id="alien3" width="300" height="300" >
-<img src="aliens-04.png" id="alien4" width="300" height="300" >
-</center>
-</div>    
-<div class="copy_right_footer" >
-    Developed by - Vikhyath M.
-</div>
-<script src="main.js"></script>
+    <div class="header_div text-center">
+        <h1>Sound-Controlled Space Adventure</h1>
+        <p>Make sounds to control your alien adventure! Try clapping, snapping, or drumming!</p>
+    </div>
+    
+    <div class="main_container">
+        <div class="controls text-center">
+            <button class="btn start-btn" onclick="startClassification();">Start Adventure</button>
+            <h3 id="result_label">Listening for sounds...</h3>
+            <h4 id="result_confidence">Accuracy: </h4>
+        </div>
+        
+        <!-- Shapes moving in background -->
+        <div class="moving-shapes">
+            <div class="circle large"></div>
+            <div class="circle small"></div>
+            <div class="square"></div>
+            <div class="triangle"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="copy_right_footer text-center">
+        <p>Created by Vikhyath M.</p>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
